@@ -11,7 +11,6 @@
 		A8502CEA27FD7B9B00314B59 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8502CE927FD7B9B00314B59 /* SceneDelegate.swift */; };
 		A8502CF127FD7B9D00314B59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8502CF027FD7B9D00314B59 /* Assets.xcassets */; };
 		A8502CF427FD7B9D00314B59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8502CF227FD7B9D00314B59 /* LaunchScreen.storyboard */; };
-		A8502D0227FD7BCD00314B59 /* UnitTestingLeariningTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8502D0127FD7BCD00314B59 /* UnitTestingLeariningTests.swift */; };
 		A8502D0E27FD7D3000314B59 /* PolicyListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8502D0D27FD7D3000314B59 /* PolicyListEntity.swift */; };
 		A8502D1027FD7D3C00314B59 /* PolicyListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8502D0F27FD7D3C00314B59 /* PolicyListRepository.swift */; };
 		A8502D1227FD7D4400314B59 /* PolicyListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8502D1127FD7D4400314B59 /* PolicyListUseCase.swift */; };
@@ -27,6 +26,7 @@
 		A8502D2827FE8D9600314B59 /* PolicyListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8502D2727FE8D9600314B59 /* PolicyListCellViewModel.swift */; };
 		A8502D2C27FE8E6900314B59 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8502D2A27FE8E6900314B59 /* EntryViewController.swift */; };
 		A8502D2D27FE8E6900314B59 /* EntryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8502D2B27FE8E6900314B59 /* EntryViewController.xib */; };
+		E1607F772833D9AF006C8ADA /* PolicyListUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1607F762833D9AF006C8ADA /* PolicyListUseCaseTests.swift */; };
 		E1607F7A2833DA48006C8ADA /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = E1607F792833DA48006C8ADA /* Nimble */; };
 		E1607F7D2833DA6C006C8ADA /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = E1607F7C2833DA6C006C8ADA /* Quick */; };
 /* End PBXBuildFile section */
@@ -49,7 +49,6 @@
 		A8502CF327FD7B9D00314B59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A8502CF527FD7B9D00314B59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A8502CFF27FD7BCD00314B59 /* UnitTestingLeariningTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTestingLeariningTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A8502D0127FD7BCD00314B59 /* UnitTestingLeariningTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTestingLeariningTests.swift; sourceTree = "<group>"; };
 		A8502D0D27FD7D3000314B59 /* PolicyListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyListEntity.swift; sourceTree = "<group>"; };
 		A8502D0F27FD7D3C00314B59 /* PolicyListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyListRepository.swift; sourceTree = "<group>"; };
 		A8502D1127FD7D4400314B59 /* PolicyListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyListUseCase.swift; sourceTree = "<group>"; };
@@ -65,6 +64,7 @@
 		A8502D2727FE8D9600314B59 /* PolicyListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyListCellViewModel.swift; sourceTree = "<group>"; };
 		A8502D2A27FE8E6900314B59 /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
 		A8502D2B27FE8E6900314B59 /* EntryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EntryViewController.xib; sourceTree = "<group>"; };
+		E1607F762833D9AF006C8ADA /* PolicyListUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyListUseCaseTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,7 +126,7 @@
 		A8502D0027FD7BCD00314B59 /* UnitTestingLeariningTests */ = {
 			isa = PBXGroup;
 			children = (
-				A8502D0127FD7BCD00314B59 /* UnitTestingLeariningTests.swift */,
+				E1607F752833D94B006C8ADA /* Domain */,
 			);
 			path = UnitTestingLeariningTests;
 			sourceTree = "<group>";
@@ -188,6 +188,14 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
+		E1607F752833D94B006C8ADA /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				E1607F762833D9AF006C8ADA /* PolicyListUseCaseTests.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -245,6 +253,7 @@
 					};
 					A8502CFE27FD7BCD00314B59 = {
 						CreatedOnToolsVersion = 13.3;
+						LastSwiftMigration = 1320;
 						TestTargetID = A8502CE327FD7B9B00314B59;
 					};
 				};
@@ -320,7 +329,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A8502D0227FD7BCD00314B59 /* UnitTestingLeariningTests.swift in Sources */,
+				E1607F772833D9AF006C8ADA /* PolicyListUseCaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,14 +527,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cathay.Test.UnitTestingLeariningTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UnitTestingLearining.app/UnitTestingLearining";
@@ -536,10 +552,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cathay.Test.UnitTestingLeariningTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
