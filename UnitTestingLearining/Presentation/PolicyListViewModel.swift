@@ -17,6 +17,7 @@ public protocol PolicyListViewInput {
 // Output
 public protocol PolicyListViewOutput {
     var dataItems: Box<[PolicyListCellViewModel]>{get}
+    var alertMsg: Box<(String, String)> { get }
     
 }
 /// Manager
@@ -36,6 +37,7 @@ public class PolicyListViewModel:PolicyListViewManager, PolicyListViewInput, Pol
     public var loadItemsFeedsTrigger: Box<Void> = Box(nil)
     
     public var dataItems: Box<[PolicyListCellViewModel]> = Box([])
+    public var alertMsg: Box<(String, String)> = Box(("", ""))
     
     
     public var input: PolicyListViewInput{
@@ -59,13 +61,14 @@ public class PolicyListViewModel:PolicyListViewManager, PolicyListViewInput, Pol
 
 extension PolicyListViewModel{
     private func initializeActions(){
-        loadItemsFeedsTrigger.binding { newValue, oldValue in
+        loadItemsFeedsTrigger.binding(trigger: false) { [weak self] newValue, oldValue in
+            guard let self = self else { return }
             self.dependency.retrievePolicyListData { result in
                 switch result{
-                case .success(let _):
-                    self.dataItems.value = [PolicyListCellViewModel()]
-                case .failure(_):
-                    break
+                case .success(let entity):
+                    self.dataItems.value = [PolicyListCellViewModel(policy_name: entity.policy_name)]
+                case.failure(let error):
+                    self.alertMsg.value = ("警告", error.localizedDescription)
                 }
             }
         }

@@ -29,6 +29,7 @@
 		E1607F772833D9AF006C8ADA /* PolicyListUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1607F762833D9AF006C8ADA /* PolicyListUseCaseTests.swift */; };
 		E1607F7A2833DA48006C8ADA /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = E1607F792833DA48006C8ADA /* Nimble */; };
 		E1607F7D2833DA6C006C8ADA /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = E1607F7C2833DA6C006C8ADA /* Quick */; };
+		E1607F802833E2EA006C8ADA /* PolicyListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1607F7F2833E2E9006C8ADA /* PolicyListViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		A8502D2A27FE8E6900314B59 /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
 		A8502D2B27FE8E6900314B59 /* EntryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EntryViewController.xib; sourceTree = "<group>"; };
 		E1607F762833D9AF006C8ADA /* PolicyListUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyListUseCaseTests.swift; sourceTree = "<group>"; };
+		E1607F7F2833E2E9006C8ADA /* PolicyListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyListViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 		A8502D0027FD7BCD00314B59 /* UnitTestingLeariningTests */ = {
 			isa = PBXGroup;
 			children = (
+				E1607F7E2833E2D1006C8ADA /* Presentation */,
 				E1607F752833D94B006C8ADA /* Domain */,
 			);
 			path = UnitTestingLeariningTests;
@@ -194,6 +197,14 @@
 				E1607F762833D9AF006C8ADA /* PolicyListUseCaseTests.swift */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		E1607F7E2833E2D1006C8ADA /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				E1607F7F2833E2E9006C8ADA /* PolicyListViewModelTests.swift */,
+			);
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,6 +340,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1607F802833E2EA006C8ADA /* PolicyListViewModelTests.swift in Sources */,
 				E1607F772833D9AF006C8ADA /* PolicyListUseCaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,7 +11,7 @@ public class Box<T> {
 
     var eventListeners: [LinsterType] = []
 
-    var value: T? = nil {
+    public var value: T? = nil {
         didSet {
             self.execute(newValue: value, oldValue: oldValue)
         }
@@ -28,7 +28,7 @@ public class Box<T> {
     }
 
     // MARK: 單一binding
-    func binding(trigger: Bool = true, _ index: Int? = nil, listener: @escaping LinsterType) {
+    public func binding(trigger: Bool = true, _ index: Int? = nil, listener: @escaping LinsterType) {
         self.appendingBinding(trigger: trigger, index: index, listener: listener)
     }
 
