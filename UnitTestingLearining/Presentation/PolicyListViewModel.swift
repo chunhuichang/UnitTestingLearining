@@ -12,7 +12,8 @@ public protocol PolicyListViewInput {
     
     //refresh
     var loadItemsFeedsTrigger: Box<Void>{get}
-    
+    // FIXME: for test
+    var dispatchGroupTrigger: Box<Void>{get}
 }
 // Output
 public protocol PolicyListViewOutput {
@@ -35,6 +36,8 @@ public class PolicyListViewModel:PolicyListViewManager, PolicyListViewInput, Pol
     }
     
     public var loadItemsFeedsTrigger: Box<Void> = Box(nil)
+    // FIXME: for test
+    public var dispatchGroupTrigger: Box<Void> = Box(nil)
     
     public var dataItems: Box<[PolicyListCellViewModel]> = Box([])
     public var alertMsg: Box<(String, String)> = Box(("", ""))
@@ -70,6 +73,22 @@ extension PolicyListViewModel{
                 case.failure(let error):
                     self.alertMsg.value = ("警告", error.localizedDescription)
                 }
+            }
+        }
+        
+        // FIXME: for test
+        dispatchGroupTrigger.binding(trigger: false) { [weak self] newValue, oldValue in
+            guard let self = self else { return }
+            
+            let dispatchGroup = DispatchGroup()
+            for i in 1...3 {
+                dispatchGroup.enter()
+                Thread.sleep(forTimeInterval: TimeInterval(i))
+                dispatchGroup.leave()
+            }
+            
+            dispatchGroup.notify(queue: .main) {
+                self.alertMsg.value = ("dispatchGroupTrigger", "")
             }
         }
     }

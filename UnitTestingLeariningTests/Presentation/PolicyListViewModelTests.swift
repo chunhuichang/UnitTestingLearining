@@ -96,6 +96,28 @@ class PolicyListViewModelTests: QuickSpec {
                     // When Action input
                     sut.input.loadItemsFeedsTrigger.value = ()
                 }
+                
+                it("非同步測試") {
+                    // Given Arrange
+                    // 指定回傳失敗
+                    let predicateError: Error = SomeError.bad("network bad")
+                    usecase.fetchResult = .failure(predicateError)
+                    sut = self.makeSUT(useCase: usecase)
+                    
+                    // output
+                    sut.output.alertMsg.binding(trigger: false) { newValue, _ in
+                        // Then Assert
+                        if let alertMsg = newValue {
+                            expect(alertMsg.0) == "dispatchGroupTrigger"
+                            expect(alertMsg.0).toEventually(equal("dispatchGroupTrigger"))
+                        } else {
+                            XCTFail("alertMsg is nil")
+                        }
+                    }
+                    
+                    // When Action input
+                    sut.input.dispatchGroupTrigger.value = ()
+                }
             }
         }
     }
