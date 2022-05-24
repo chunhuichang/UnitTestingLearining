@@ -81,10 +81,15 @@ extension PolicyListViewModel{
             guard let self = self else { return }
             
             let dispatchGroup = DispatchGroup()
+            
+            let queue = DispatchQueue(label: "queue", attributes: .concurrent)
             for i in 1...3 {
                 dispatchGroup.enter()
-                Thread.sleep(forTimeInterval: TimeInterval(i))
-                dispatchGroup.leave()
+                print("\(i) Before: \(Date())")
+                queue.asyncAfter(deadline: DispatchTime.now() + DispatchTimeInterval.seconds(i)) {
+                    print("\(i) After: \(Date())")
+                    dispatchGroup.leave()
+                }
             }
             
             dispatchGroup.notify(queue: .main) {

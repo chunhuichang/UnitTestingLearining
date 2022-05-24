@@ -105,18 +105,21 @@ class PolicyListViewModelTests: QuickSpec {
                     sut = self.makeSUT(useCase: usecase)
                     
                     // output
-                    sut.output.alertMsg.binding(trigger: false) { newValue, _ in
-                        // Then Assert
-                        if let alertMsg = newValue {
-                            expect(alertMsg.0) == "dispatchGroupTrigger"
-                            expect(alertMsg.0).toEventually(equal("dispatchGroupTrigger"))
-                        } else {
-                            XCTFail("alertMsg is nil")
-                        }
-                    }
+//                    sut.output.alertMsg.binding(trigger: false) { newValue, _ in
+//                        // Then Assert
+//                        if let alertMsg = newValue {
+//                            expect(alertMsg.0) == "dispatchGroupTrigger"
+//                            expect(alertMsg.1) == ""
+//                        } else {
+//                            XCTFail("alertMsg is nil")
+//                        }
+//                    }
                     
                     // When Action input
                     sut.input.dispatchGroupTrigger.value = ()
+                    // Then Assert
+                    expect(sut.output.alertMsg.value?.0).toEventually(equal("dispatchGroupTrigger"),timeout: DispatchTimeInterval.seconds(5))
+                    expect(sut.output.alertMsg.value?.1).toEventually(equal(""),timeout: DispatchTimeInterval.seconds(5))
                 }
             }
         }
