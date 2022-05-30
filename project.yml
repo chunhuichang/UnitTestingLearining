@@ -1,0 +1,96 @@
+name: UnitTestingLearining
+
+############
+# Options
+############
+
+options:
+  bundleIdPrefix: com.cathay.Test
+  xcodeVersion: "13.2.1"
+  deploymentTarget:
+    iOS: 13.0
+
+############
+# Configs
+############
+
+# configs:
+#   Debug: debug
+#   Release: release
+#   Adhoc: release
+#   Beta: release    
+
+############
+# Packages
+############
+
+packages:
+  Quick:
+    url: https://github.com/Quick/Quick.git
+    majorVersion: 5.0.0
+
+  Nimble:
+    url: https://github.com/Quick/Nimble.git
+    majorVersion: 10.0.0
+
+
+############
+# Schemes
+############
+
+schemes: 
+  UnitTestingLearining:
+    build:
+      targets:
+        UnitTestingLearining: all         
+    run:
+      config: Debug
+    test:
+      config: Debug
+      gatherCoverageData: true
+      targets: 
+        - UnitTestingLeariningTests      
+    profile: 
+      config: Debug 
+    analyze:
+      config: Debug
+    archive: 
+      config: Debug
+
+############
+# Targets
+############
+
+targets:
+
+  # -----------
+  # UnitTestingLearining
+  # -----------
+
+  UnitTestingLearining:
+    type: application   
+    platform: iOS
+    deploymentTarget:
+      iOS: 13.0    
+        
+    # sources 
+    sources: 
+      - path: UnitTestingLearining 
+
+  # -----------
+  # UnitTestingLeariningTests
+  # -----------
+
+  UnitTestingLeariningTests:
+    type: bundle.unit-test
+    platform: iOS
+
+    # sources
+    sources:
+      - UnitTestingLeariningTests
+
+    # dependencies
+    dependencies:
+      - target: UnitTestingLearining
+      - package: Quick
+      - package: Nimble
