@@ -67,6 +67,7 @@
 		CC95732B04DF69E864E3CE9C /* PolicyListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyListUseCase.swift; sourceTree = "<group>"; };
 		E22039285EFB47F09FE6E5D5 /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
 		E597DF6173767AE309591D5D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		EB5AE787B47E026F2EC1196D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +146,7 @@
 		9102AE122DF0EFF6BE9AE497 /* UnitTestingLeariningTests */ = {
 			isa = PBXGroup;
 			children = (
+				EB5AE787B47E026F2EC1196D /* Info.plist */,
 				8713653BF7F63C986C0593E5 /* Domain */,
 				2304B1A9C66600B209C472B0 /* Presentation */,
 			);
@@ -248,6 +250,12 @@
 			attributes = {
 				LastUpgradeCheck = 1321;
 				TargetAttributes = {
+					7D2C8B255AF1D953A10488BA = {
+						ProvisioningStyle = Manual;
+					};
+					9CADA12FDE3F59E45D08581B = {
+						ProvisioningStyle = Manual;
+					};
 				};
 			};
 			buildConfigurationList = 0AB004B57F5CE15AAC2F2C92 /* Build configuration list for PBXProject "UnitTestingLearining" */;
@@ -401,6 +409,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				INFOPLIST_FILE = UnitTestingLearining/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -416,6 +425,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Manual;
+				INFOPLIST_FILE = UnitTestingLeariningTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -432,6 +443,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Manual;
+				INFOPLIST_FILE = UnitTestingLeariningTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -449,6 +462,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				INFOPLIST_FILE = UnitTestingLearining/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

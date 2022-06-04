@@ -70,12 +70,17 @@ targets:
   UnitTestingLearining:
     type: application   
     platform: iOS
-    deploymentTarget:
-      iOS: 13.0    
         
     # sources 
     sources: 
       - path: UnitTestingLearining 
+
+    settings:
+      base:
+        TARGETED_DEVICE_FAMILY: 1,2
+        CODE_SIGN_STYLE: Manual
+        INFOPLIST_FILE: UnitTestingLearining/Info.plist
+        # PRODUCT_BUNDLE_IDENTIFIER: com.cathay.Test.UnitTestingLearining
 
   # -----------
   # UnitTestingLeariningTests
@@ -94,3 +99,8 @@ targets:
       - target: UnitTestingLearining
       - package: Quick
       - package: Nimble
+
+    settings:
+      base:
+        CODE_SIGN_STYLE: Manual
+        INFOPLIST_FILE: UnitTestingLeariningTests/Info.plist
